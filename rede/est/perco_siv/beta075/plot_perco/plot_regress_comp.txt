@@ -1,0 +1,27 @@
+set terminal png size 1000, 1000
+ext="png"
+#set terminal pdfcairo size 10, 10
+#ext="pdf"
+set key autotitle columnheader
+set xtics 10 font ",14"
+set ytics 0.002 font ",14"
+set xrange [30:100]
+set yrange [0.001:0.016]
+set grid
+set decimalsign ","
+unset colorbox
+set key font ",17" width -21
+set key at graph 0.96, 0.936
+set key spacing 1.3
+#set title "{/:Helvetica=20 Vacinação em função de L (<P> = 0.5)}"
+set xlabel "{L}" font ",25" offset 0,0,0
+set ylabel "{{/Symbol e}_c}"  font ",27" offset 0.5,0,0
+
+set output 'plot_regress_comp.png'
+plot 'regress_comp.dat' u 1:5 w lp pt 7 lw 2.5 title '{/Symbol b}=1,00', \
+	'regress_comp.dat' u 1:4 w lp pt 7 lw 2.5 title '{/Symbol b}=0,75', \
+	'regress_comp.dat' u 1:3 w lp pt 7 lw 2.5 title '{/Symbol b}=0,50', \
+	'regress_comp.dat' u 1:2 w lp pt 7 lw 2.5 title '{/Symbol b}=0,25'
+	
+
+unset output

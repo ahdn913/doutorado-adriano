@@ -1,0 +1,5 @@
+set autoscale xfix
+set autoscale yfix
+set autoscale cbfix
+set pm3d map
+splot 'rps-0.dat' matrix nonuniform notitle

@@ -1,0 +1,2 @@
+Quanto menor for pr, menor é o tempo de vida das bolhas, com máximo em pr=1.
+Quando pr=0.7, o efeito já se torna imperceptível.

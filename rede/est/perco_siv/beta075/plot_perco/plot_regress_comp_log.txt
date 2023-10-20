@@ -1,0 +1,20 @@
+set terminal png size 1000, 1000
+ext="png"
+#set terminal pdfcairo size 10, 10
+#ext="pdf"
+set key autotitle columnheader
+#set xtics 10
+#set ytics 0.002
+set xrange [30:100]
+set yrange [0.001:0.016]
+set logscale y
+set logscale x
+set title "{/:Helvetica=20 Vacinação em função de L (<P> = 0.5)}"
+set xlabel "{/:Helvetica=20 Tamanho da Rede (L)}"
+set ylabel "{/Helvetica=20 Parâmetro de Vacinação}"
+
+set output 'plot_regress_comp_log.png'
+plot for [col = 2:5] "regress_comp.dat" u 1:col w lp pt 7
+	
+
+unset output

@@ -1,0 +1,2 @@
+as simulações deste modelo eram as de turing, mas o breno corrigiu elas
+pra parecer o modelo de may-leonard e acabou ficando melhor que o original.

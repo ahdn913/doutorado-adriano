@@ -1,0 +1,21 @@
+set terminal png size 1000, 1000
+ext="png"
+#set terminal pdfcairo size 10, 10
+#ext="pdf"
+set key autotitle columnheader
+set key left top
+set xtics 0.0012
+set ytics 0.1
+set xrange [0.5854:0.5998]
+set yrange [0:1]
+set title "Probabilidade de Percolação por probabilidade de Ocupação"
+set xlabel "Probabilidade de Ocupação do Sítio"
+set ylabel "Probabilidade de Percolar"
+set arrow 1 from 0.5927, graph 0 to 0.5927, graph 1 nohead
+set arrow 5 from 0,0.5, graph 0 to 1,0.5, graph 1 nohead
+
+set output 'PercoPlot.png'
+plot for [col = 2:7] "dados_base.dat" u 1:col w lp pt 7
+
+
+unset output

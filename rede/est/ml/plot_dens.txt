@@ -1,0 +1,26 @@
+set terminal png size 1600, 1000
+ext="png"
+#set terminal pdfcairo size 10, 10
+#ext="pdf"
+unset colorbox
+set key font ",15" #width -15
+#set key at graph 0.25, 0.89 #\
+	#samplen 2.0 spacing 1.1 box width 1.0 height 0.5
+set grid
+set xrange[0:5000]
+set yrange[0:0.4]
+set xtics font ",14"
+set ytics 0.1 font ",14"
+set xlabel "Gerações" font ",23"
+set ylabel "Tamanho populacional" font ",23" offset 1,0,0
+set pm3d map
+set decimalsign ',' 
+
+set output 'dens.png'
+plot "dens.dat" u 1:($2/90000) w l lw 1.8 lc rgb "#00ff00" t "Vazio", \
+	"dens.dat" u 1:($3/90000) w l lw 1.8 lc rgb "#ff0000" t "Espécie A", \
+	"dens.dat" u 1:($4/90000) w l lw 1.8 lc rgb "#0000ff" t "Espécie B", \
+	"dens.dat" u 1:($5/90000) w l lw 1.8 lc rgb "purple" t "Espécie C"
+	
+
+unset output

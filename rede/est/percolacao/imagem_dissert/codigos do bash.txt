@@ -1,0 +1,11 @@
+fazer x vezes:
+	for I in $(seq 10000); do echo $I; ./sir_perco_100x $I ;done
+
+fazer x vezes num range 90000~100000:
+	for I in $(seq 90000 100000); do echo $I; ./sir_perco_100x $I ;done
+
+printar números na tela:
+	cat dat/percolacao.dat
+
+contar quantos "x" tem em cada linha:
+	grep "^x" dat/percolacao.dat | wc -l

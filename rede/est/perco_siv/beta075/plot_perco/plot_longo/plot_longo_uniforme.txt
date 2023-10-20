@@ -1,0 +1,31 @@
+set terminal png size 1000, 1000
+ext="png"
+#set terminal pdfcairo size 10, 10
+#ext="pdf"
+#set key autotitle columnheader
+#set xtics 0.2
+set xrange [0.2:1.75]
+set yrange [0:1.0]
+set ytics 0.1 font ",14"
+set xtics 0.2 font ",14"
+set grid
+set decimalsign ","
+unset colorbox
+set key font ",15" width -19
+set key at graph 0.96, 0.955
+#set title "{Probabilidade de Percolação por probabilidade de vacinação}"
+#set xlabel "{/:Helvetica=20 Parâmetro de Vacinação}"
+set xlabel "{{/Symbol e}/{/Symbol e}_c}" font ",25" offset 0,-1,0
+set ylabel "{Probabilidade de Percolar}" font ",23" offset 1,0,0
+
+set output 'plot_longo_uniforme.png'
+#plot for [col = 2:7] "dados_convergencia.dat" u 1:col w lp pt 7
+plot "dados_convergencia.dat" u ($1/0.0156):($2) w lp pt 7 lw 2.5 lc rgb "red" title 'L=30', \
+	'dados_convergencia.dat' u ($1/0.0116):($3) w lp pt 7 lw 2.5 lc rgb "yellow" title 'L=40', \
+	'dados_convergencia.dat' u ($1/0.00925):($4) w lp pt 7 lw 2.5 lc rgb "orange" title 'L=50', \
+	'dados_convergencia.dat' u ($1/0.00765):($5) w lp pt 7 lw 2.5 lc rgb "green" title 'L=60', \
+	'dados_convergencia.dat' u ($1/0.0057):($6) w lp pt 7 lw 2.5 lc rgb "blue" title 'L=80',\
+	'dados_convergencia.dat' u ($1/0.00453):($7) w lp pt 7 lw 2.5 lc rgb "purple" title 'L=100'
+
+
+unset output
