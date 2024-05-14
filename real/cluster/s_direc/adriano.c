@@ -9,14 +9,14 @@
 #define l 0.01 // tamanho do passo (0.01)
 #define R 0.1 	 // tamanho da zona de interação
 #define l_rep 0.01 // tamanho da distância de reprodução
-#define NG 500 // número de gerações ###2 reduzindo o número para 400, só pra ficar mais rápido (1000)
+#define NG 500 // número de gerações #2 reduzindo o número para 400, só pra ficar mais rápido (1000)
 #define pd 0.3  // probabilidade de morte (0.3)
 #define pr 0.7  // probabilidade de reprodução (0.7)
 #define M 160   // Limite de indivíduos do cluster
 #define eta 1.0 // parametro direcional da mobilidade
 
 struct intble {
-	int    s; // gênero?
+	int    s; // gênero
 	double x; // posição em x
 	double y; // posição em y
 	double d; // 

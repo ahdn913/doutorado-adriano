@@ -17,7 +17,7 @@ i=0
 while (i <= 10000 ){
 	set output sprintf("sir-%d.%s", i, ext)
 	#plot sprintf("../dat/sir-%d.dat", i) u 1:2:3 matrix with boxxyerror lc palette notitle
-	plot sprintf("../../dat_snap/200/sir-%d.dat", i) u 1:2:(0.5):(0.5):3 matrix with boxxyerror lc palette notitle 
+	plot sprintf("../dat_snap/200/sir-%d.dat", i) u 1:2:(0.5):(0.5):3 matrix with boxxyerror lc palette notitle 
 	print(i)	
 	i= i+1
 }
