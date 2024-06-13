@@ -101,7 +101,7 @@ int main(int argc, char **argv){
 				d= L;
 				k=0;
 				for(j= 0; j< N; j++){
-				p[j].d = L;
+					p[j].d = L;
 					if(p[j].s != p[n].s && p[j].s != 0){// se o sexo do indivíduo escolhido for diferente do outro ind.
 						dx= fabs(p[j].x - p[n].x);		// fabs te dá o módulo de um float/double
 						if(dx > 0.5*L){ dx-= L; } 		// condição de borda em x

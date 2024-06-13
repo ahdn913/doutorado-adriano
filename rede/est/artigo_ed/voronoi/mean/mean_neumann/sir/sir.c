@@ -18,15 +18,16 @@
 
 int phi[L*L];
 
-void op(int t, char **argv){
+void op(int t){
 	int i, j; 
 	double x, y;
 	FILE *arq;
 	char nome[100];
 
-	sprintf(nome, "%d/sir-%d.dat", atoi(argv[1]), t);
+	sprintf(nome, "plot_dat/sir-%d.dat", t);
 	arq= fopen(nome, "w");
 	for(j= 0; j< Nj; j++){
+		for(i= 0; j< Ni; i++){
 
 /*// Rede honeycomb 
  		int desl;
@@ -56,7 +57,10 @@ void op(int t, char **argv){
 
 			x= i;
 			y= j;
+		}
 	}
+	fprintf(arq, "%e %e %d\n", x, y, phi[j*Nj+i]);
+	fclose(arq);
 }
 
 
@@ -165,6 +169,7 @@ int main(int argc, char **argv){
 	int *nb;		//neighboors
 	int z=4;
 	char name[100];
+	char nome[100];
 	double acao;
 	FILE *arq;
 	
@@ -210,7 +215,7 @@ int main(int argc, char **argv){
 				for(x= 0; x< Ni*Nj; x++){
 					i= gsl_rng_uniform(w)*Ni;
 					j= gsl_rng_uniform(w)*Nj;
-					ativo= i*Nj+j;
+					ativo= j*Nj+i;
 					
 					vz(z, i, j, nb);	
 					passivo= nb[(int)(gsl_rng_uniform(w)*z)];
@@ -229,7 +234,7 @@ int main(int argc, char **argv){
 						}
 					}
 				}
-				cont_sus= cont_inf= 0;
+				/*cont_sus= cont_inf= 0;
 				for(i= 0; i < Ni; i++){
 					for(j= 0; j < Nj; j++){
 						if(phi[i*Nj+j]==1){
@@ -278,11 +283,19 @@ int main(int argc, char **argv){
 				}
 				*/
 				if(trigger == 0){	
+					sprintf(nome, "plot_dat/sir-%d.dat", t);
+					arq= fopen(nome, "w");
+					for(i= 0; i< Ni; i++){
+						for(j= 0; j< Nj; j++){
+							fprintf(arq, "%d ", phi[j*Nj+i]);
+						}
+						fprintf(arq, "\n");
+					}
+					fclose(arq);
 					t++;
 					//
 					//
 					//
-					//op(t);
 				}
 			}
 		//}

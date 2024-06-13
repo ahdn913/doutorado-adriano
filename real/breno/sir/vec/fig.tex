@@ -1,0 +1,41 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage{graphicx}               %inclusão de figuras
+\usepackage[caption=false]{subfig}  %permite o uso do comando subfloat
+\usepackage{float}
+\usepackage{amsmath, amssymb}       %inclusão de símbolos matemáticos 
+\usepackage{lmodern}                %habilita alguns caracteres latinos extras
+\usepackage[T1]{fontenc}            %permite acentuação
+\usepackage[utf8]{inputenc}         %idem anterior - no windows usar latin1
+\usepackage[brazil,brazilian]{babel}%habilita hifenizações
+%\usepackage[english]{babel}        %enable hyphenation
+\usepackage{cite}                   %converte [1,2,3,4,5] -> [1-5]
+\usepackage[margin= 1.5cm]{geometry}%define o tamanho das margens
+\usepackage[normalem]{ulem}         %permite sublinhar uma palavra
+\usepackage{setspace}               %permite usar espaçamento \onehalfspacing \doublespacing
+\usepackage{indentfirst}            %indenta o primeiro parágrafo
+\usepackage{color, colortbl}        %permite textos e tabelas coloridas
+\usepackage{booktabs}               %comandos adicionais para melhorar a qualidade das tabelas
+\usepackage{multirow}               %permite juntar linhas de uma tabela
+\usepackage{array}                  %permite definir uma largura para celula de uma tabela
+\usepackage{hyperref}               %gera hiperlinks no pdf
+	\hypersetup{colorlinks, citecolor=blue, linkcolor=blue, urlcolor=blue} 
+\usepackage{tikz}
+\usepackage{ mathrsfs }
+\newcommand{\sen}{\operatorname{sen}}
+\usepackage[percent]{overpic}
+\pagestyle{empty}
+\begin{document}
+
+\renewcommand\arraystretch{0}
+\renewcommand\tabcolsep{0pt}
+
+
+\begin{tabular}{cc}
+\includegraphics[width=4.0cm]{../vec-4.pdf} &
+\includegraphics[width=4.0cm]{../vec-6.pdf} \\
+\includegraphics[width=4.0cm]{../vec-8.pdf} &
+\includegraphics[width=4.0cm]{../vec-10.pdf} \\
+\end{tabular}
+
+\end{document}
